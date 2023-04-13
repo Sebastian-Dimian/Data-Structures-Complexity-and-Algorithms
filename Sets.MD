@@ -61,13 +61,6 @@ Much like its mathematical counterpart, sets in Python 3 can utilize its vast op
 7. __Proper Superset:__ This is a boolean operator. A is a proper superset of B if A has all the values of B and more, but they are not equal to each other
 8. __Superset:__ This is a boolean operator. A is a superset of B if A > B or A == B
 
-__Example code:__
-
-
-
-
-
-
 
 ## Disjoint: A Set Behaviour Property
 Two set are consided disjointed when two sets share no common value.
@@ -89,12 +82,29 @@ print('--')
 print('set 1 disjoint set 2 check:', set1.isdisjoint(set2)) # Therefore .isdisjoint() evaluates to True
 print('set 1 disjoint set 3 check:', set2.isdisjoint(set3))
 ```
-## Set Operators as Methods
 
-__Example__
+## Set Comprehension
+
+```Python
+def isPalindrome(x):
+    ''' isPalindrome() returns True if string X is a palindrome '''
+    return x == x[::-1]
+
+nums = list(range(1,10000))
+palindromic_set = {num for num in nums if isPalindrome(str(num))}
+
+print('Palindromic Numbers Set from 1 to 10000:')
+print(palindromic_set)
+```
+Much like list comprehension, sets support comprehension as well.
 
 
-
+## __Important Notes to take away:__
+1. Sets aren’t sliceable nor indexable
+2. Sets cannot have sets inside them
+3. Sets do not have order; nor order of insertion
+4. Sets cannot guarantee that their values will be in order
+5. Sets do not record a value’s position
 
 
 
